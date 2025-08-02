@@ -1,0 +1,646 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/newspaper.css">
+    <title>Pidginstew</title>
+    <meta name="viewport" content="width=device-width">
+
+</head>
+
+
+<style>
+    body{
+        font-family: 'Droid Serif', serif;
+        font-size: 14px;
+        color: #2f2f2f;
+        background-color: #f9f7f1;
+    }
+    header{
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        font-size: 80px;
+        text-transform: uppercase;
+        display: inline-block;
+        line-height: 72px;
+        margin-bottom: 20px;
+    
+    }
+    p{
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .head{
+        text-align: center;
+        position: relative;
+    
+    
+    }
+    
+    .headerobjectswrapper{
+    }
+    
+    .subhead{
+        text-transform: uppercase;
+        border-bottom: 2px solid #2f2f2f;
+        border-top: 2px solid #2f2f2f;
+        padding: 12px 0 12px 0;
+    
+    }
+    .weatherforcastbox{
+        position: relative;
+        width: 12%;
+        left: 10px;
+        border: 3px double #2f2f2f;
+        padding: 10px 15px 10px 15px;
+        line-height: 20px;
+        display: inline-block;
+        margin: 0 50px 20px -360px;
+    }
+    .content{
+        font-size: 0;
+        line-height: 0;
+        word-spacing: -.31em;
+        display: inline-block;
+        margin: 30px 2% 0 2%;
+    
+    
+    }
+    .collumns{
+    
+    }
+    
+    .collumn{
+        font-size: 14px;
+        line-height: 20px;
+        width: 17.5%;
+        display: inline-block;
+        padding: 0 1% 0 1%;
+        vertical-align: top;
+        margin-bottom: 50px;
+        transition: all .7s;
+    }
+    .collumn + .collumn { 
+      border-left: 1px solid #2f2f2f;
+    }
+    .collumn .headline{
+        text-align: center;
+        line-height: normal;
+        font-family: 'Playfair Display', serif;
+        display: block;
+        margin: 0 auto;
+    
+    
+    }
+    .collumn .headline.hl1{
+        font-weight: 700;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding: 10px 0 10px 0;
+    
+    }
+    
+    .collumn .headline.hl2{
+        font-weight: 400;
+        font-style: italic;
+        font-size: 24px;
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+    }
+    
+    .collumn .headline.hl2:before{
+        border-top: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        height: 7px;
+        display: block;
+        margin: 0 auto;
+    }
+    .collumn .headline.hl2:after{
+        border-bottom: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        height: 13px;
+        display: block;
+        margin: 0 auto;
+    
+    }
+    
+    .collumn .headline.hl3{
+        font-weight: 400;
+        font-style: italic;
+        font-size: 36px;
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+    }
+    .collumn .headline.hl4{
+        font-weight: 700;
+        font-size: 12px;
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+    }
+    .collumn .headline.hl4:before{
+        border-top: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        height: 7px;
+        display: block;
+        margin: 0 auto;
+    }
+    .collumn .headline.hl4:after{
+        border-bottom: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        height: 10px;
+        display: block;
+        margin: 0 auto;
+    
+    }
+    
+    .collumn .headline.hl5{
+        font-weight: 400;
+        font-size: 42px;
+        text-transform: uppercase;
+        font-style: italic;
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+    }
+    .collumn .headline.hl6{
+        font-weight: 400;
+        font-size: 18px;
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+    }
+    .collumn .headline.hl6:before{
+        border-top: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        height: 7px;
+        display: block;
+        margin: 0 auto;
+    }
+    .collumn .headline.hl6:after{
+        border-bottom: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        height: 10px;
+        display: block;
+        margin: 0 auto;
+    
+    }
+    .collumn .headline.hl7{
+        font-weight: 700;
+        font-size: 12px;
+        box-sizing: border-box;
+        display: block;
+        padding: 10px 0 10px 0;
+    }
+    .collumn .headline.hl8{
+        font-weight: 700;
+        font-size: 12px;
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+    }
+    .collumn .headline.hl9{
+        font-weight: 700;
+        font-size: 12px;
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+    }
+    .collumn .headline.hl10{
+        font-weight: 700;
+        font-size: 12px;
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+    }
+    .collumn .citation{
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        line-height: 44px;
+        /*font-style: italic;*/
+        text-align: center;
+        font-weight: 400;
+        display: block;
+        margin: 40px 0 40px 0;
+        font-feature-settings: "liga", "dlig";
+    
+    }
+    .collumn .citation:before{
+        border-top: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        height: 16px;
+        display: block;
+        margin: 0 auto;
+    }
+    .collumn .citation:after{
+        border-bottom: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        height: 16px;
+        display: block;
+        margin: 0 auto;
+    }
+    .collumn .figure {
+          margin: 0 0 20px;
+    }
+    .collumn .figcaption{
+        font-style: italic;
+        font-size: 12px;
+    }
+    .media {
+        /* -webkit-filter: sepia(80%) contrast(1) opacity(0.8); */
+        /* filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8); */
+        mix-blend-mode: multiply;
+        width: 100%;
+    }
+    /*________________________________________________________________________________________________________________________________*/
+    /*MEDIAQUERIES*/
+    @media only all and (max-width: 1300px) {
+        .weatherforcastbox{
+            display: none;
+        }
+    
+    }
+    @media only all and (max-width: 1200px) {
+        .collumn{
+            width: 31%;
+        }
+    
+    }
+        @media only all and (max-width: 900px) {
+        .collumn{
+            width: 47%;
+        }
+    
+    }
+    @media only all and (max-width: 600px) {
+        .collumn{
+            width: 100%;
+        }
+        .collumn + .collumn {
+                    border-left: none;
+              border-bottom: 1px solid #2f2f2f;
+        }
+        header{
+            max-width: 320px;
+            font-size: 60px;
+            line-height: 54px;
+            overflow: hidden;
+        }
+    
+    }
+</style>
+<body>
+<div class="head">
+    <div class="headerobjectswrapper">
+        <!-- <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div> -->
+        <header>Bulletin</header>
+    </div>
+
+    <div class="subhead" id="date-container">
+
+
+        
+    <script>
+        // Function to get the current date and format it
+        function updateDate() {
+            const today = new Date();
+
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            const dayOfWeek = daysOfWeek[today.getDay()];
+            const month = monthsOfYear[today.getMonth()];
+            const day = today.getDate();
+            const year = today.getFullYear();
+
+            // Format the date as "Thursday August 30, 1978"
+            const formattedDate = `${dayOfWeek} ${month} ${day}, ${year}`;
+
+            // Update the HTML content
+            document.getElementById('date-container').textContent = formattedDate;
+        }
+
+        // Call the function to update the date on page load
+        updateDate();
+    </script>
+    </div>
+
+
+</div>
+<div class="content">
+    <div class="collumns">
+        <div class="collumn">
+            <div class="head"><span class="headline hl3">Shakespeare Sonnet 9 translated to Naijá </span>
+                <!-- <p>
+                    <span class="headline hl4">performed by Odirin Abonyi</span>
+                </p> -->
+            </div>
+            "Is it for fear to wet a widow’s eye,"
+            <br>
+
+            "That thou consum’st thy self in single life?"
+            <br>
+            "Ah! if thou issueless shalt hap to die,"
+            <br>
+            "The world will wail thee like a makeless wife;"
+            <br>
+
+            "The world will be thy widow and still weep"
+            <br>
+            "That thou no form of thee hast left behind,"
+            <br>
+            "When every private widow well may keep"
+            <br>
+            "By children’s eyes, her husband’s shape in mind:"
+            <br>
+            "Look what an unthrift in the world doth spend"
+            <br>
+            "Shifts but his place, for still the world enjoys it;"
+            <br>
+            "But beauty’s waste hath in the world an end,"
+            <br>
+            "And kept unused the user so destroys it."
+            <br>
+            "No love toward others in that bosom sits"
+            <br>
+            "That on himself such murd’rous shame commits."
+            <figure class="figure">
+       
+
+                <video class="media"  src="assets/images/odirin.mp4" autoplay controls>
+
+                </video>
+                <!-- <figcaption class="figcaption">Odirin's Presentation.</figcaption> -->
+        </figure>
+      
+    </div>
+
+
+        <div class="collumn">
+            <div class="head">
+                <p>
+                    <span class="headline hl3">Naijá Dictionary</span>
+
+                    <p>
+                        <span class="headline hl6">First Nigerian Pidgin Dictionary</span>
+                    </p>
+
+                    <figure class="figure">
+                        <img class="media" src="assets/images/naijadict.jpg" alt="">
+                        
+                </figure>
+
+                <figure class="figure">
+                    <img class="media" src="assets/images/content.jpg" alt="">
+                    
+            </figure>
+
+            <figure class="figure">
+                <img class="media" src="assets/images/editor.jpg" alt="">
+                
+        </figure>
+                </p> 
+
+
+                
+           
+            </div>
+          
+			<figure class="figure">
+
+     
+						
+						</figure>
+
+            <p>
+                <span class="headline hl6">How to get it?</span>
+               
+               Place an order, call or send whatsapp message to <a href="tel: +2348 166 550 860">+2348 166 550 860</a>.
+
+              <!-- or browse am for <a href="https://naija.elizia.net/index.php?title=main_Page">Naijionary</a>. -->
+
+              Get an Invoice here also: <a href="assets/images/Naijá Dictionary Invoice_01.pdf" download="Naijá Dictionary Invoice_01.pdf">Invoice</a>
+
+             
+            </p>
+
+
+
+
+
+
+
+            </div>
+
+
+
+   
+        
+        
+     
+            <div class="collumn">
+                <div class="head">
+                    <span class="headline hl1">The Background 
+                    </span>
+                    <p><span class="headline hl4"> Nigerian Pidgin in Global, Local and In-between Contexts</span></p>
+                </div>
+                <p>
+                    Naijá  (a.k.a. Nigerian Pidgin) has evolved over the last few decades to become the largest spoken and perhaps the most influential language in Nigeria. The current estimate of its speakers and users is placed at about 150 million with distribution across various continents. As a result of its mutual intelligibility with other West African Pidgins, it holds great potential as a veritable language for regional integration and sustainable development in the face of climate change and other environmental concerns.
+                    <br>
+                    <br>
+
+                    Since the turn of the Millennium, contributions in studies related to Naija have been made in the areas of syntactic shifts, prosodic paradigms, discursive trends and ideologies. These are observable in its use in literature, entertainment and Nigerian Stand up Comedy, broadcast media for news/sports commentary and on air presentations, in Nigerian Hip Hop or Afrobeats as a revivalist trend reminiscent of Fela’s Yabbis songs of the 70s and 80s, religious literature including Bible translations, and now as a language of the monolingual offline Naijá Dictionary, and its online version Naijionary. 
+
+                    <br>
+                    <br>
+                    In the course of the last decades, the interventions for sustaining the growth of Naijá have been more individuated than coordinated through a synergy among users and practitioners in the different domains mentioned above. The institution of the Naijá Language Project (now defunct) in a 2009 Conference has until now been the major collaboration that brought its users and practitioners under an umbrella to forge the development of Naijá. The objectives of the Naijá Language Project were:
+                    <ul>
+                        <li>research, facilitate research and/or publish research on the nature of Naijá (including scientific articles, journals, books, dictionaries etc)</li>
+                        <li> develop a standard and acceptable writing system/orthography for Naijá</li>
+                        <li>to document, publish and/or facilitate the development of scholarly and non-scholarly, literary and non-literary materials on Naijá</li>
+
+                        <li>to establish a scientific committee to govern and facilitate sound and original research on any aspect of Naijá</li>
+                        <li>
+                        to develop a method for teaching and learning the Naijá language
+                        </li>
+                        <br>
+                        <br>
+
+
+                    </ul>
+                    These objectives remain unexplored to their fullest, necessitating this Conference which is an initiative designed to create an interactive forum for researchers, translators, language technologists, teachers, journalists, artistes and artists, skitmakers, poets, playwrights, policy makers, and many others. Its goal is to harness the growth of Naijá thus far and chart its further advancement under an umbrella body with members drawn from various communities in Nigeria, West, Central, Eastern and Southern Africa, the rest of the world. 
+                    <br>
+                    <br>
+                    Therefore, this Call for Papers for the Conference themed ‘‘Naijá na Hẹlẹlẹ (meaning Naijá is Incredible) – Nigerian Pidgin in Global, Local and In-between Contexts’, intersects, but is not limited to, the following major themes and sub-themes: <a href="https://docs.google.com/document/d/1UxxuLgnkr-yY9ngbeG49jkAN4UZGkuI1/edit?usp=sharing_eil_se_dm&rtpof=true&sd=true&ts=665b34ca">Click Here to see the themes</a>
+
+                </p>
+            </div>
+       
+       
+       
+       
+                <div class="collumn">
+                    <div class="head"><span class="headline hl3">Photospeak</span>
+            <!-- <p><span class="headline hl4">...Festivals & more</span></p> -->
+        </div>
+        <p><figure class="figure">
+            <img class="media" src="assets/images/1.jpg" alt="">
+            
+    </figure>
+</p>
+					
+					<p> <a href="https://forms.gle/BfsCCc5cLrmugysc7">Submit Abstract here</a></p>
+                
+                    <figure class="figure">
+                        <img class="media" src="assets/images/fest.jpg" alt="">
+                        <!-- <figcaption class="figcaption">"Naijá Festival."</figcaption> -->
+                </figure>
+                <p><a href="https://forms.gle/BfsCCc5cLrmugysc7">Call For Submissions</a></p>
+
+                <figure class="figure">
+                    <img class="media" src="assets/images/cfp.jpg" alt="">
+                
+            </figure>
+                
+                <figure class="figure">
+                    <img class="media" src="assets/images/hamlet.jpg" alt="">
+                    <!-- <figcaption class="figcaption">"Naijá Festival."</figcaption> -->
+            </figure>
+         
+            <figure class="figure">
+                <img class="media" src="assets/images/ogini.png" alt="">
+        </figure>
+
+       
+        <p> <a href="https://brittlepaper.com/2023/04/excerpt-oga-pikin-shakespeares-hamlet-in-nigerian-pidgin-by-ogini-bernard/">Visit Site </a></p>
+            
+
+            <figure class="figure">
+                <img class="media" src="https://cms-imgp.jw-cdn.org/img/p/bi7/PGW/pt/bi7_PGW_lg.jpg" alt="">
+
+                <p> <a href="https://www.jw.org/finder?wtlocale=PGW&pub=bi12&srcid=share">Visit Site </a></p>
+            
+        </figure>
+
+        <figure class="figure">
+            <img class="media" src="assets/images/ifyouhear.jpg" alt="">
+    </figure>
+    <figure class="figure">
+        <img class="media" src="assets/images/abuja.jpg" alt="">
+</figure>
+
+                </div>
+   
+                
+   
+
+
+
+
+
+   
+                    <div class="collumn"><div class="head"><span class="headline hl1">Voxpop</span></div></p>
+                    <figure class="figure">
+                                                <img class="media" src="data:image/webp;base64,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" alt=""> 
+                                                 <!-- <figcaption class="figcaption">"This time, let go your conscious self and act on instinct."</figcaption> -->
+                                        </figure>
+                            <p>Former President, Goodluck Jonathan. <a href="https://youtu.be/Q7N2KPzt8LE?si=DBVEaFFzPgLT7LMR">Watch Here</a> 
+                                
+                                <figure class="figure">
+                                    <img class="media" src="data:image/webp;base64,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IiIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczpJcHRjNHhtcENvcmU9Imh0dHA6Ly9pcHRjLm9yZy9zdGQvSXB0YzR4bXBDb3JlLzEuMC94bWxucy8iICAgeG1sbnM6R2V0dHlJbWFnZXNHSUZUPSJodHRwOi8veG1wLmdldHR5aW1hZ2VzLmNvbS9naWZ0LzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGx1cz0iaHR0cDovL25zLnVzZXBsdXMub3JnL2xkZi94bXAvMS4wLyIgIHhtbG5zOmlwdGNFeHQ9Imh0dHA6Ly9pcHRjLm9yZy9zdGQvSXB0YzR4bXBFeHQvMjAwOC0wMi0yOS8iIHhtbG5zOnhtcFJpZ2h0cz0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3JpZ2h0cy8iIGRjOlJpZ2h0cz0iMjAyMiBHZXR0eSBJbWFnZXMiIHBob3Rvc2hvcDpDcmVkaXQ9IkdldHR5IEltYWdlcyIgR2V0dHlJbWFnZXNHSUZUOkFzc2V0SUQ9IjE0MzE0MTI1OTYiIHhtcFJpZ2h0czpXZWJTdGF0ZW1lbnQ9Imh0dHBzOi8vd3d3LmdldHR5aW1hZ2VzLmNvbS9ldWxhP3V0bV9tZWRpdW09b3JnYW5pYyZhbXA7dXRtX3NvdXJjZT1nb29nbGUmYW1wO3V0bV9jYW1wYWlnbj1pcHRjdXJsIiA+CjxkYzpjcmVhdG9yPjxyZGY6U2VxPjxyZGY6bGk+U2VhbiBHYWxsdXA8L3JkZjpsaT48L3JkZjpTZXE+PC9kYzpjcmVhdG9yPjxkYzpkZXNjcmlwdGlvbj48cmRmOkFsdD48cmRmOmxpIHhtbDpsYW5nPSJ4LWRlZmF1bHQiPlBSQUdVRSwgQ1pFQ0ggUkVQVUJMSUMgLSBPQ1RPQkVSIDA3OiBGcmVuY2ggUHJlc2lkZW50IEVtbWFudWVsIE1hY3JvbiBzcGVha3MgdG8gdGhlIG1lZGlhIGZvbGxvd2luZyBhbiBpbmZvcm1hbCBzdW1taXQgb2YgdGhlIGxlYWRlcnMgb2YgdGhlIEV1cm9wZWFuIENvdW5jaWwgYXQgUHJhZ3VlIENhc3RsZSBvbiBPY3RvYmVyIDA3LCAyMDIyIGluIFByYWd1ZSwgQ3plY2ggUmVwdWJsaWMuIFRoZSBzdW1taXQgaXMgZm9sbG93aW5nIHRoZSBpbmF1Z3VyYWwgbWVldGluZyBvZiB0aGUgRXVyb3BlYW4gUG9saXRpY2FsIENvbW11bml0eSAoRUNQKSB0aGUgZGF5IGJlZm9yZS4gKFBob3RvIGJ5IFNlYW4gR2FsbHVwL0dldHR5IEltYWdlcyk8L3JkZjpsaT48L3JkZjpBbHQ+PC9kYzpkZXNjcmlwdGlvbj4KPHBsdXM6TGljZW5zb3I+PHJkZjpTZXE+PHJkZjpsaSByZGY6cGFyc2VUeXBlPSdSZXNvdXJjZSc+PHBsdXM6TGljZW5zb3JVUkw+aHR0cHM6Ly93d3cuZ2V0dHlpbWFnZXMuY29tL2RldGFpbC8xNDMxNDEyNTk2P3V0bV9tZWRpdW09b3JnYW5pYyZhbXA7dXRtX3NvdXJjZT1nb29nbGUmYW1wO3V0bV9jYW1wYWlnbj1pcHRjdXJsPC9wbHVzOkxpY2Vuc29yVVJMPjwvcmRmOmxpPjwvcmRmOlNlcT48L3BsdXM6TGljZW5zb3I+CgkJPC9yZGY6RGVzY3JpcHRpb24+Cgk8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJ3Ij8+CgA=" alt=""> 
+                          
+                            </figure>
+                <p>President Emmanuel Macron. <a href="https://www.bbc.com/pidgin/tori-44708827">Watch Here</a>
+                    <br>
+                
+                                
+
+
+                    <figure class="figure">
+                        <img class="media" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/King_Charles_III_%28July_2023%29.jpg/220px-King_Charles_III_%28July_2023%29.jpg" alt=""> 
+                         
+                </figure>
+    <p>King Charles III. <a href="https://www.bbc.com/pidgin/tori-44708827">Watch Here</a></p>
+
+        <br>
+        
+                                
+                                <span class="citation">"Naijá na really hẹlẹlẹ"</span>
+                                <p>
+                                <li>Naija Symposium
+                                    <a href="https://youtu.be/uPETkle3PGc">Watch Here</a>
+                                </li>                        
+                                    </p>
+                            <p>
+                                <li>Claire Edun (Oyinbo Princess) <a href="https://www.youtube.com/watch?v=LiMdXTCT_O8">Watch Here</a> </li>
+                            </p>
+
+                            <p>
+                                <li>Fari Elysian
+                                <a href="https://youtu.be/tsUfQrbBKuo?si=zFJDHaggNhHbiK_l">Watch Here</a></li>
+                                </p>
+
+                                <p>
+                                    <li>BBC Pidgin takes to the airwave in Nigeria
+                                <a href="https://youtu.be/sztKANo8aic">Watch Here</a>
+                            </li>                        
+                                </p>
+                                
+                               
+
+                                
+                                <p>
+                                    <li>Amadou Elizabeth Aminata (a.k.a A.I. JARVIS)
+                                <a href="https://www.instagram.com/reel/C73Q6pEoqzu/?igsh=cGExdWJpcXU5cW5q">Watch Here</a>
+                            </li>                        
+                                </p>
+                           
+                                    <li>If Say I be Spoken Word Poet
+                                <a href="https://youtu.be/bsxw5uwUccA?si=dEz-L2bVvqSXCjaw">Watch Here</a>
+                            </li>                        
+                                </p>
+                                <li>
+                                    Colgate - Drumroll: The Yanga with your smile
+                                    <a href="https://www.facebook.com/ColgateNGN/videos/drumrollthe-yanga-with-your-smile-video-is-out-we-often-playfully-tease-children/1093263098429634/">Go watch am</a>
+                                </li>
+                            </p>
+
+                            <p>
+                                <li>
+                                    Yellow Card: A movie in Naija Pidgin
+                                    <a href="https://youtu.be/kGrX6TiRKPw?si=1Wkp6VVrlIKtRwuJ">Watch here</a>
+                                </li>
+                                </p>
+
+                            <br>
+
+                            <span class="citation">Shake the Sword</span>
+
+                        
+                                <li>Nigerian Shakespeares: Naijá, English, Yoruba & more  - <a href=" https://podcasts.apple.com/za/podcast/nigerian-shakespeares-naija-english-yoruba-and-more/id1588531492?i=1000552423903">Listen Here</a>
+                                
+                                </li>
+                    
+                        </div>
+                          
+                
+                </div> 
+
+
+
+    
+</div>
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJ0GS9FW7T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LJ0GS9FW7T');
+</script>
+</body>
+</html>
